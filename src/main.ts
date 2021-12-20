@@ -36,17 +36,6 @@ async function bootstrap() {
       return next();
     });
   }
-  app.enableCors({
-    origin: [
-      'http://localhost:3000',
-      'http://127.0.0.1:3000',
-      'https://offprint.net',
-      /\.offprint\.net$/,
-    ],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-    credentials: true,
-  });
   app.enableVersioning({
     type: VersioningType.URI,
     defaultVersion: `v1`,
